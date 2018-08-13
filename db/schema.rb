@@ -10,10 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_13_112321) do
+ActiveRecord::Schema.define(version: 2018_08_13_163215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorite_spots", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "spot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_favorite_spots_on_spot_id"
+    t.index ["user_id"], name: "index_favorite_spots_on_user_id"
+  end
+
+  create_table "forecasts", force: :cascade do |t|
+    t.string "date"
+    t.bigint "spot_id"
+    t.string "time_slot"
+    t.float "wind_speed"
+    t.float "wave_heigth"
+    t.float "wind_direction"
+    t.float "wave_direction"
+    t.float "wind_gust"
+    t.float "wave_period"
+    t.float "temperature"
+    t.string "weather_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_forecasts_on_spot_id"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.bigint "forecast_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["forecast_id"], name: "index_sessions_on_forecast_id"
+    t.index ["user_id"], name: "index_sessions_on_user_id"
+  end
+
+  create_table "spots", force: :cascade do |t|
+    t.string "name"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,8 +72,18 @@ ActiveRecord::Schema.define(version: 2018_08_13_112321) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.float "pref_wind_speed_min"
+    t.float "pref_wind_speed_max"
+    t.float "pref_wave_height_min"
+    t.float "pref_wave_height_max"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favorite_spots", "spots"
+  add_foreign_key "favorite_spots", "users"
+  add_foreign_key "forecasts", "spots"
+  add_foreign_key "sessions", "forecasts"
+  add_foreign_key "sessions", "users"
 end
