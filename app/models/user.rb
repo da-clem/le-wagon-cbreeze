@@ -10,4 +10,13 @@ class User < ApplicationRecord
   validates :pref_wind_speed_max, presence: true, numericality: true
   validates :pref_wave_height_min, presence: true, numericality: true
   validates :pref_wave_height_max, presence: true, numericality: true
+
+  after_initialize :set_default
+
+  def set_default
+    self.pref_wave_height_max = 0
+    self.pref_wave_height_min = 0
+    self.pref_wind_speed_max = 0
+    self.pref_wind_speed_min = 0
+  end
 end
