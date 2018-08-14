@@ -8,3 +8,9 @@
   <h3><%= spot.name %></h3>
   <p><%= spot.country %></p>
 <% end %>
+<div class="form">
+<%= simple_form_for [@favorite_spot] do |f| %>
+  <%= f.association :spot %>
+  <%= f.submit "Add to favorite spots", class: "btn btn-primary" %>
+<% end %>
+</div>
