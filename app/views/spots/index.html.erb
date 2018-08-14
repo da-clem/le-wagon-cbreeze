@@ -1,2 +1,5 @@
-<h1>Spots#index</h1>
-<p>Find me in app/views/spots/index.html.erb</p>
+<h1>All the spots</h1>
+<% @spots.each do |spot| %>
+  <h3><%= spot.name %></h3>
+  <p><%= spot.country %></p>
+<% end %>
