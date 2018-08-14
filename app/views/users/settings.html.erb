@@ -1,0 +1,10 @@
+<h2><%=current_user.name %> Settings</h2>
+<p>PREF WIND SPEED MIN : <%= current_user.pref_wind_speed_min %></p>
+<p>PREF WIND SPEED MAX : <%= current_user.pref_wind_speed_max %></p>
+<p>PREF WAVE HEIGHT MIN : <%= current_user.pref_wave_height_min %></p>
+<p>PREF WAVE HEIGHT MAX : <%= current_user.pref_wave_height_max %></p>
+<h3>My favorite Beaches</h3>
+<% current_user.spots.each do |spot| %>
+  <h3><%= spot.name %></h3>
+  <p><%= spot.country %></p>
+<% end %>

@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_many :favorite_spots
   has_many :spots, through: :favorite_spots
   has_many :sessions, dependent: :destroy
   validates :pref_wind_speed_min, presence: true, numericality: true
