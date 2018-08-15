@@ -4,9 +4,9 @@
 <% end %>
 
 <h1>Forcasts</h1>
-<%= render 'shared/card' %>
 <% @forecasts.each do |forecast| %>
   <h3><%= "#{forecast.spot.name} - #{forecast.date}" %></h3>
   <p>WIND SPEED : <%= forecast.wind_speed %>...BLABLA</p>
+  <%= render 'shared/card', forecast: forecast %>
 <% end %>
 
