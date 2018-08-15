@@ -12,10 +12,10 @@ $font-size-base: 18px;
 // Colors
 $gray-base:       $gray;
 $brand-primary:   $primary-blue;
-$brand-success:   $green;
+$brand-success:   $danger-blue;
 $brand-info:      $yellow;
-$brand-danger:    $danger-blue;
-$brand-warning:   $orange;
+$brand-danger:    $gray-dark;
+$brand-warning:   $gray;
 
 // Buttons & inputs' radius
 $border-radius-base:  2px;
@@ -66,10 +66,10 @@ $border-radius-small: 2px;
 
 // $gray-base:              #000 !default;
 // $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
-// $gray-dark:              lighten($gray-base, 20%) !default;   // #333
-// $gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-dark:              #5F6C79;   // #333
+$gray:                   #8C969F; // #555
 // $gray-light:             lighten($gray-base, 46.7%) !default; // #777
-// $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+$gray-lighter:           #BDC3C7; // #eee
 
 // $brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
 // $brand-success:         #5cb85c !default;
