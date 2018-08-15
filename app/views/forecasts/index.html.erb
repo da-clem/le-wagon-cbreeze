@@ -1,3 +1,8 @@
+<%= content_for(:bars) do %>
+  <%= render 'shared/tabs' %>
+  <%= render 'shared/timeslottabs' %>
+<% end %>
+
 <h1>Forcasts</h1>
 <% @forecasts.each do |forecast| %>
   <h3><%= "#{forecast.spot.name} - #{forecast.date}" %></h3>
