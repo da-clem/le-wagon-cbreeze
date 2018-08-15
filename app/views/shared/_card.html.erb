@@ -3,15 +3,13 @@
     <div class='col-xs-12'>
       <div class='card-container'>
         <div class='card'>
-          <div class='card-head-container'>
-            <div class='head-weather-container'>
-              <div class='weather-icon'>
-              <%= image_tag "icons/#{forecast.weather_code}.svg" %>
-              </div>
-              <div class='weather-temp'>
-              <p><%= forecast.temperature %></p>
-              </div>
+          <div class='head-weather-container'>
+            <%= image_tag "icons/#{forecast.weather_code}.svg", width: 20, height: 20 %>
+            <div class='weather-temp'>
+            <p><%= forecast.temperature %></p>
             </div>
+          </div>
+          <div class='card-head-container'>
             <div class='beach-name'>
               <p><%= forecast.spot.name %></p>
             </div>
