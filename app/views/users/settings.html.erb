@@ -1,3 +1,12 @@
+<h4>Wind range</h4>
+<input id="wind-slider" type="text" class="slider" value="" data-slider-min="0" data-slider-max="50" data-slider-step="5" data-slider-value="[10,25]"/>
+
+<h4>Wave height</h4>
+<input id="wave-slider" type="text" class="slider" value="" data-slider-min="0" data-slider-max="5" data-slider-step="0.5" data-slider-value="[0,2]"/>
+
+<!-- <h2>Wind range II </h2>
+<input id="ex12c" type="text"/><br/> -->
+
 <h2><%=current_user.name %> Settings</h2>
 <p>PREF WIND SPEED MIN : <%= current_user.pref_wind_speed_min %></p>
 <p>PREF WIND SPEED MAX : <%= current_user.pref_wind_speed_max %></p>
@@ -14,3 +23,15 @@
   <%= f.submit "Add to favorite spots", class: "btn btn-primary" %>
 <% end %>
 </div>
+
+<script>
+  var windSlider = new Slider('#wind-slider', {});
+  var waveSlider = new Slider('#wave-slider', {});
+
+</script>
+
+<!-- <script>
+var sliderA = new Slider("#ex12a", { id: "slider12a", min: 0, max: 10, value: 5 });
+var sliderB = new Slider("#ex12b", { id: "slider12b", min: 0, max: 10, range: true, value: [3, 7] });
+var sliderC = new Slider("#ex12c", { id: "slider12c", min: 0, max: 10, range: true, value: [3, 7] });
+</script> -->
