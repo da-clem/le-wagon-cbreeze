@@ -1,0 +1,32 @@
+.timeslottabs {
+  //background: linear-gradient(to right, $brand-primary , $brand-success);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px 10px 0 10px;
+}
+.timeslottabs a {
+  color: $brand-primary;
+  font-size: 14px;
+}
+.timeslottabs a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.timeslottabs p {
+  margin-bottom: 0;
+  font-weight: bolder;
+}
+.timeslottabs h6 {
+  margin-bottom: 7px;
+
+}
+.timeslottab {
+  flex: 0 0 33.3%;
+  text-align: center;
+  padding: 10px 0px 0px 0px;
+}
+.timeslottab.active {
+  color: $brand-primary;
+  border-bottom: 6px solid $brand-primary;
+}

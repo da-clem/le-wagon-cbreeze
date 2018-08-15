@@ -1,0 +1,25 @@
+.tabs {
+  background: linear-gradient(to right, $brand-primary , $brand-success);
+  display: flex;
+  padding: 10px 10px 0 10px;
+}
+.tabs a {
+  color: white;
+}
+.tabs a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.tabs p {
+  margin-bottom: 0;
+}
+.tab {
+  flex: 0 0 20%;
+  text-align: center;
+  padding: 10px 0;
+}
+.tab.active {
+  background: white;
+  color: $brand-primary;
+}
