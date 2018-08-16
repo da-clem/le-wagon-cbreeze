@@ -1,21 +1,44 @@
 .card {
-
+  width: 335px;
+  background: linear-gradient($primary-blue, $danger-blue);
+  border-radius: 4px;
+  border: 1px solid white;
+  box-shadow: 1px 1px 2px $gray-lighter;
+  margin-top: 10px;
+  padding: 10px;
+  color: white;
+  position: relative;
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .card-head-container {
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0px;
+  // background-color: black;
+}
 
+.head-weather-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  height: 31px;
 }
 
 .weather-icon {
-
+  width: 20px;
 }
 
-.weather-temp {
-
+.weather-temp p {
+  font-size: 12px;
 }
 
-.beach-name {
-
+.beach-name p {
+  font-size: 22px;
 }
 
 .session-icon {
@@ -23,47 +46,54 @@
 }
 
 .card-body-container {
-
+  display: flex;
+  justify-content: space-evenly;
+  * {
+    margin: 0;
+  }
+  // background-color: red;
 }
 
 .card-wind-container {
+  // background-color: blue;
 
 }
 
-.wind-icon {
-
+.wind-icon img {
+  width: 30px;
 }
 
-.wind-speed {
-
+.wind-speed p {
+  font-size: 22px;
 }
 
 .wind-direction-icon {
 
 }
 
-.wind-gusts {
-
+.wind-gusts p {
+  font-size: 12px;
 }
 
 .card-wave-container {
+  // background-color: yellow;
+}
+
+.wave-icon img {
+  width: 30px;
 
 }
 
-.wave-icon {
-
-}
-
-.wave-height {
-
+.wave-heigth {
+  font-size: 22px;
 }
 
 .wave-direction-icon {
 
 }
 
-.wave-period {
-
+.wave-period p {
+  font-size: 12px;
 }
 
 
