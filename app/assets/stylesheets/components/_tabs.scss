@@ -5,6 +5,7 @@
 }
 .tabs a {
   color: white;
+  padding-bottom: 15px;
 }
 .tabs a:hover {
   cursor: pointer;
@@ -22,4 +23,5 @@
 .tab.active {
   background: white;
   color: $brand-primary;
+  border-bottom: 0px;
 }
