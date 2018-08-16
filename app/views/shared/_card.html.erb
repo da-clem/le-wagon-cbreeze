@@ -23,13 +23,13 @@
                 <%= image_tag "icons/wind.svg" %>
               </div>
               <div class='wind-speed'>
-                <p><%= forecast.wind_speed %></p>
+                <p><%= forecast.wind_speed %><span class='metric'> kts</span></p>
               </div>
               <div class='wind-direction-icon'>
-                <!-- TODO -->
+              <!--   TODO  -->
               </div>
               <div class='wind-gusts'>
-                <p><%= forecast.wind_gust %></p>
+                <p><%= forecast.wind_gust %> kts</p>
               </div>
             </div>
             <div class='card-wave-container'>
@@ -37,13 +37,13 @@
                 <%= image_tag "icons/wave.svg" %>
               </div>
               <div class='wave-heigth'>
-                <p><%= forecast.wave_heigth %></p>
+                <p><%= forecast.wave_heigth %><span class='metric'> m</span></p>
               </div>
               <div class='wave-direction-icon'>
               <!-- "TODO" -->
               </div>
               <div class='wave-period'>
-                <p><%= forecast.wave_period %></p>
+                <p><%= forecast.wave_period %> sec</p>
               </div>
             </div>
           </div>

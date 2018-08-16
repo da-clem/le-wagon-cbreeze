@@ -3,6 +3,8 @@
   display: flex;
   justify-content: space-evenly;
   padding: 0px 10px 0 10px;
+  position: sticky;
+  top: 136px;
 }
 .timeslottabs a {
   color: $brand-primary;
