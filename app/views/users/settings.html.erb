@@ -1,24 +1,30 @@
-<h4>Wind range</h4>
+<!-- TODO: pluralize-->
 
-<input id="wind-slider" type="text" class="slider" value="" data-slider-min="0" data-slider-max="50" data-slider-step="5" data-slider-value="[10,25]"/>
+<div class="settings-slider-container">
+  <h4 class="text-center">
+    <%= image_tag "icons/wind_grey.svg", width: 40 %>
+    <span id="minWindSpan"><%= wind_min %></span> to
+    <span id="maxWindSpan"><%= wind_max %></span> knots
+  </h4>
+  <div class="slider-container">
+    <input id="wind-slider" type="text" class="slider" value="" data-slider-min="0" data-slider-max="40" data-slider-step="1" data-slider-value="[<%= wind_min %>,<%= wind_max %>]"/>
+  </div>
+  <h4 class="text-center">
+    <%= image_tag "icons/wave_grey.svg", width: 40 %>
+    <span id="minWaveSpan"> <%= waves_min %> </span> to
+    <span id="maxWaveSpan"> <%= waves_max %> </span> meters
+  </h4>
+  <div class="slider-container">
+    <input id="wave-slider" type="text" class="slider" value="" data-slider-min="0" data-slider-max="5" data-slider-step="0.5" data-slider-value="[<%= waves_min %>,<%= waves_max %>]"/>
+  </div>
+</div>
 
-<h4>Wave height</h4>
-<input id="wave-slider" type="text" class="slider" value="" data-slider-min="0" data-slider-max="5" data-slider-step="0.5" data-slider-value="[0,2]"/>
-
- <%= image_tag "icons/wind_grey.svg" %>
-<!-- <h2>Wind range II </h2>
-<input id="ex12c" type="text"/><br/> -->
-
-<h2><%=current_user.name %> Settings</h2>
-<p>PREF WIND SPEED MIN : <%= current_user.pref_wind_speed_min %></p>
-<p>PREF WIND SPEED MAX : <%= current_user.pref_wind_speed_max %></p>
-<p>PREF WAVE HEIGHT MIN : <%= current_user.pref_wave_height_min %></p>
-<p>PREF WAVE HEIGHT MAX : <%= current_user.pref_wave_height_max %></p>
 <h3>My favorite Beaches</h3>
 <% current_user.spots.each do |spot| %>
   <h3><%= spot.name %></h3>
   <p><%= spot.country %></p>
 <% end %>
+
 <div class="form">
 <%= simple_form_for [@favorite_spot] do |f| %>
   <%= f.association :spot %>
@@ -26,18 +32,30 @@
 <% end %>
 </div>
 
-<script>
-  var windSlider = new Slider('#wind-slider', {});
-  var waveSlider = new Slider('#wave-slider', {});
-
-</script>
-
-<!-- <script>
-var sliderA = new Slider("#ex12a", { id: "slider12a", min: 0, max: 10, value: 5 });
-var sliderB = new Slider("#ex12b", { id: "slider12b", min: 0, max: 10, range: true, value: [3, 7] });
-var sliderC = new Slider("#ex12c", { id: "slider12c", min: 0, max: 10, range: true, value: [3, 7] });
-</script> -->
-
 <%= link_to destroy_user_session_path, method: :delete do %>
 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
 <% end %>
+
+
+<script>
+  const windSlider = new Slider('#wind-slider', {
+  tooltip: 'hide'
+  }).on('slide', slideWindAction);
+  const windPrefMin = windSlider._state.value[0];
+  const windPrefMax = windSlider._state.value[1];
+
+
+  const waveSlider = new Slider('#wave-slider', {
+  tooltip: 'hide'
+  }).on('slide', slideWaveAction);
+
+
+  function slideWindAction() {
+    document.getElementById("minWindSpan").innerText = windSlider.getValue()[0];
+    document.getElementById("maxWindSpan").innerText = windSlider.getValue()[1];
+  }
+  function slideWaveAction() {
+    document.getElementById("minWaveSpan").innerText = waveSlider.getValue()[0];
+    document.getElementById("maxWaveSpan").innerText = waveSlider.getValue()[1];
+  }
+</script>
