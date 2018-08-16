@@ -1,8 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<p>Here there should be a nice picture, and a button to sign up and sign in</p>
-
-<%=link_to "Sign up now!", new_user_registration_path, class: "btn btn-primary btn-lg"  %>
+<div class="banner">
+  <div class="banner-content text-center">
+    <h1>cBreeze</h1>
+    <p>Say cheese!</p>
+     <p>Plan your kite week with ease!</p>
+      <p>Get ready for an ocean freeze!</p>
+    <div>
+      <%=link_to "Sign up now!", new_user_registration_path, class: "btn btn-primary btn-lg"  %>
+    </div>
     <div>
       <%=link_to "Sign in", new_user_session_path, class: "btn btn-light btn-lg"  %>
+    </div>
+  </div>
+</div>
+
+

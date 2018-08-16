@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_13_163215) do
+ActiveRecord::Schema.define(version: 2018_08_16_111304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2018_08_13_163215) do
     t.string "time_slot"
     t.float "wind_speed"
     t.float "wave_heigth"
-    t.float "wind_direction"
-    t.float "wave_direction"
+    t.string "wind_direction"
+    t.string "wave_direction"
     t.float "wind_gust"
     t.float "wave_period"
     t.float "temperature"
