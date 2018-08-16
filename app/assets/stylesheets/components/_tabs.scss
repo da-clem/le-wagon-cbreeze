@@ -2,6 +2,9 @@
   background: linear-gradient(to right, $brand-primary , $brand-success);
   display: flex;
   padding: 10px 10px 0 10px;
+  position: sticky;
+  top: 70px;
+  z-index: 2;
 }
 .tabs a {
   color: white;
