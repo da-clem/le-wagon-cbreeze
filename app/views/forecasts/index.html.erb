@@ -7,3 +7,12 @@
   <%= render 'shared/card', forecast: forecast %>
 <% end %>
 
+<script>
+  document.querySelectorAll(`[data-day='${new Date().toJSON().slice(0,10)}'][data-time='11']`).forEach(function(obj) {
+    obj.style.display="block";
+  });
+
+
+
+
+</script>
