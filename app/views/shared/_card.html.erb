@@ -2,7 +2,7 @@
   <div class='row'>
     <div class='col-xs-12 col-sm-4'>
       <div class='card-container'>
-        <div class='card' data-day='<%=forecast.date%>' data-time='<%=forecast.time_slot%>'=>
+        <div class='card' data-day='<%=forecast.date%>' data-time='<%=forecast.time_slot%>'>
           <div class='head-weather-container'>
             <%= image_tag "icons/#{forecast.weather_code}.svg", width: 20, height: 20 %>
             <div class='weather-temp'>
@@ -14,7 +14,7 @@
               <p><%= forecast.spot.name %></p>
             </div>
             <div class='session-icon'>
-              <!-- "TODO" -->
+              <%= render 'shared/switch', sessions: @sessions, forecast: forecast %>
             </div>
           </div>
           <div class='card-body-container'>
