@@ -27,32 +27,41 @@
  <h4 class="text-center">My Spots</h4>
 </div>
 
- <% current_user.spots.each do |spot| %>
- <div class="card">
-    <h3><%= spot.name %></h3>
-    <p><%= spot.country %></p>
- </div>
-<% end %>
-
-
-<div class='row'>
-    <div class='col-xs-12 col-sm-4'>
-      <div class='card-container'>
-
-
-
+<div class="container">
+   <% current_user.spots.each do |spot| %>
+     <div class='row'>
+        <div class='col-xs-12 col-sm-4'>
+          <div class="beach-card">
+            <h3><%= spot.name %></h3>
+            <p><%= spot.country %></p>
+        </div>
       </div>
-  </div>
+    </div>
+  <% end %>
+
+    <div class="beach-card">
+    <div class="form">
+    <%= simple_form_for [@favorite_spot] do |f| %>
+      <%= f.association :spot %>
+      <div class="container-center-elements">
+      <%= f.submit "Add new spot", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+    </div>
+   </div>
+
+
 </div>
 
-<div class="form">
-<%= simple_form_for [@favorite_spot] do |f| %>
-  <%= f.association :spot %>
-  <%= f.submit "Add to favorite spots", class: "btn btn-primary" %>
-<% end %>
+
+
+<div class="page-separator spots-separator">
+  <h4 class="text-center">Something</h4>
 </div>
 
-<%= link_to destroy_user_session_path, method: :delete do %>
-<i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-<% end %>
+<div class="container-center-elements">
+  <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-danger" do %>
+  <%= t(".sign_out", default: "Log out") %>
+  <% end %>
+</div>
 
