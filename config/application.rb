@@ -8,7 +8,6 @@ Bundler.require(*Rails.groups)
 
 module Cbreeze
   class Application < Rails::Application
-config.serve_static_assets = true
     config.generators do |generate|
           generate.assets false
           generate.helper false
