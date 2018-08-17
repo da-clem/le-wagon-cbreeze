@@ -1,0 +1,6 @@
+<label class="switch">
+  <input type="checkbox" class="toggle-input" <%= "checked" if @sessions.include? forecast.id %> data-forecast='<%=forecast.id%>'/>
+  <span class="slider round"></span>
+  <%= link_to "Add to My sessions", mysessions_create_path(forecast.id), class: 'addSession', method: :post, :style=>'display:none;' %>
+  <%= link_to "Remove from My sessions", mysessions_destroy_path(forecast.id), class: 'removeSession', method: :delete, :style=>'display:none;' %>
+</label>
