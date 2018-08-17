@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
     authorize @session
 
      if @session.save
-      redirect_to mysessions_path
     else
       #render :new
     end
@@ -25,7 +24,6 @@ class SessionsController < ApplicationController
 
     # TODO - must replace the destroy_all method with destoy once validation is ready.
     @session.destroy_all
-    redirect_to mysessions_path
   end
 
 end

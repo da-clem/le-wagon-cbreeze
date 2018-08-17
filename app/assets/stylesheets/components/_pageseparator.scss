@@ -1,0 +1,9 @@
+.page-separator {
+  background: linear-gradient(to right, $brand-primary , $brand-success);
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+.spots-separator {
+    margin-top: 20px;
+}
