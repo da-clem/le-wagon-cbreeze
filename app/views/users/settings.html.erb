@@ -28,32 +28,34 @@
 </div>
 
 <div class="container">
+<div class='card-wrapper'>
    <% current_user.spots.each do |spot| %>
      <div class='row'>
         <div class='col-xs-12 col-sm-4'>
           <div class="beach-card">
-            <h3><%= spot.name %></h3>
-            <p><%= spot.country %></p>
-             <%= link_to "Delete", favorite_spot_path(spot), method: :delete %>
+            <div class="beach-info">
+              <h3><%= spot.name %></h3>
+              <p><%= spot.country %></p>
+            </div>
+            <div class="beach-actions">
+              <p> <%= link_to "Delete", favorite_spot_path(spot), method: :delete %> </p>
+            </div>
         </div>
       </div>
     </div>
   <% end %>
-
-    <div class="beach-card">
-    <div class="form">
-    <%= simple_form_for [@favorite_spot] do |f| %>
-      <%= f.association :spot %>
-      <div class="container-center-elements">
-      <%= f.submit "Add new spot", class: "btn btn-primary" %>
+    <div class="new-beach-card">
+      <div class="form">
+      <%= simple_form_for [@favorite_spot] do |f| %>
+        <%= f.association :spot %>
+        <div class="container-center-elements">
+        <%= f.submit "Add new spot", class: "btn btn-primary" %>
+        </div>
+      <% end %>
       </div>
-    <% end %>
-    </div>
    </div>
-
+  </div>
 </div>
-
-
 
 <div class="page-separator spots-separator">
   <h4 class="text-center">Something</h4>
