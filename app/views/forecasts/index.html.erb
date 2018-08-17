@@ -10,13 +10,24 @@
 <% end %>
 
 <script>
-  document.querySelectorAll(".card").forEach(function(obj) {
-    obj.style.display="none";
-  });
+  function showCardsForDay(day=null){
 
-  document.querySelectorAll(`[data-day='${new Date().toJSON().slice(0,10)}'][data-time='11']`).forEach(function(obj) {
-    obj.style.display="block";
-  });
+
+    document.querySelectorAll(".card").forEach(function(obj) {
+      obj.style.display="none";
+    });
+    let jsday
+    if (day==null)
+      jsday = new Date().toJSON().slice(0,10)
+    else
+      jsday = new Date(day).toJSON().slice(0,10)
+
+    document.querySelectorAll(`[data-day='${jsday}'][data-time='11']`).forEach(function(obj) {
+      obj.style.display="block";
+    });
+  }
+
+  showCardsForDay();
 
 
 
