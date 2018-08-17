@@ -5,6 +5,8 @@
 
 <% @forecasts.each do |forecast| %>
   <%= render 'shared/card', forecast: forecast %>
+  <%= link_to "Add to My sessions", mysessions_create_path(forecast.id), method: :post %>
+  <%= link_to "Remove from My sessions", mysessions_destroy_path(forecast.id), method: :delete %>
 <% end %>
 
 <script>

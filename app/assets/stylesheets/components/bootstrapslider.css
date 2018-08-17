@@ -37,15 +37,23 @@
  * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
- *
+ * bootstrapslider.css
  * ========================================================= */
+
 .slider {
   display: inline-block;
   vertical-align: middle;
   position: relative;
 }
+
+.slider-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .slider.slider-horizontal {
-  width: 210px;
+  width: 300px;
   height: 20px;
 }
 .slider.slider-horizontal .slider-track {
