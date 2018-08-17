@@ -8,7 +8,6 @@ function tab_listeners(){
 function addTabListener(){
   document.querySelector(".active").classList.toggle("active");
   this.classList.toggle("active");
-
 }
 
 

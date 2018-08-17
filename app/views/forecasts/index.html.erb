@@ -10,6 +10,10 @@
 <% end %>
 
 <script>
+  document.querySelectorAll(".card").forEach(function(obj) {
+    obj.style.display="none";
+  });
+
   document.querySelectorAll(`[data-day='${new Date().toJSON().slice(0,10)}'][data-time='11']`).forEach(function(obj) {
     obj.style.display="block";
   });
