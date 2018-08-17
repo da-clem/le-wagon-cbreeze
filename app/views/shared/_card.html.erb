@@ -27,7 +27,10 @@
               </div>
               <div class="secondary-info-wind">
                 <div class='wind-direction-icon'>
-                  <%= image_tag ("icons/" + forecast.wind_direction + ".svg") %>
+                  <%= a = forecast.wind_direction %>
+                  <%= "#{a}" %>
+                  <%= p a  %>
+                  <%= image_tag ("icons/" + a + ".svg") %>
                 </div>
 
                 <div class='wind-gusts'>
