@@ -1,4 +1,10 @@
 <!-- TODO: pluralize-->
+<div class="separator">
+ <h2 class="text-center">
+   Preferences
+ </h2>
+</div>
+
 
 <div class="settings-slider-container">
   <h4 class="text-center">
@@ -19,11 +25,22 @@
   </div>
 </div>
 
-<h3>My favorite Beaches</h3>
+<h3>My Spots</h3>
 <% current_user.spots.each do |spot| %>
   <h3><%= spot.name %></h3>
   <p><%= spot.country %></p>
 <% end %>
+
+
+<div class='row'>
+    <div class='col-xs-12 col-sm-4'>
+      <div class='card-container'>
+
+
+
+      </div>
+  </div>
+</div>
 
 <div class="form">
 <%= simple_form_for [@favorite_spot] do |f| %>
