@@ -3,8 +3,7 @@
   <%= render 'shared/timeslottabs' %>
 <% end %>
 
-<%= cl_image_tag("wave_grey",
-      width: 400, height: 300, crop: :fill) %>
+
 
 <% @forecasts.each do |forecast| %>
   <%= render 'shared/card', forecast: forecast %>
