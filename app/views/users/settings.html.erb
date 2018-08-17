@@ -34,6 +34,7 @@
           <div class="beach-card">
             <h3><%= spot.name %></h3>
             <p><%= spot.country %></p>
+             <%= link_to "Delete", favorite_spot_path(spot), method: :delete %>
         </div>
       </div>
     </div>
@@ -49,7 +50,6 @@
     <% end %>
     </div>
    </div>
-
 
 </div>
 
