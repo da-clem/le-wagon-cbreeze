@@ -3,6 +3,9 @@
   <%= render 'shared/timeslottabs' %>
 <% end %>
 
+<%= cl_image_tag("wave_grey",
+      width: 400, height: 300, crop: :fill) %>
+
 <% @forecasts.each do |forecast| %>
   <%= render 'shared/card', forecast: forecast %>
   <!--<%= link_to "Add to My sessions", mysessions_create_path(forecast.id), method: :post %>
