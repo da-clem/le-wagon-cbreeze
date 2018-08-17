@@ -1,9 +1,9 @@
 <div class="tabs">
-  <%= link_to "Mon", "#", class: "tab" %>
-  <%= link_to "Tue", "#", class: "tab active" %>
-  <%= link_to "Wed", "#", class: "tab" %>
-  <%= link_to "Thu", "#", class: "tab" %>
-  <%= link_to "Fri", "#", class: "tab" %>
+  <%= link_to Date.today.strftime("%A")[0,3], "#", class: "tab active" %>
+  <%= link_to (Date.today+1).strftime("%A")[0,3], "#", class: "tab" %>
+  <%= link_to (Date.today+2).strftime("%A")[0,3], "#", class: "tab" %>
+  <%= link_to (Date.today+3).strftime("%A")[0,3], "#", class: "tab" %>
+  <%= link_to (Date.today+4).strftime("%A")[0,3], "#", class: "tab" %>
 </div>
 
 

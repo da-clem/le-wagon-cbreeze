@@ -50,12 +50,11 @@ class StormGlassApiCallJob < ApplicationJob
         hash_forecast = Hash[hash_forecast.map { |key, value| [API_TRANSLATIONS[key], value/4] }]
         hash_forecast[:wind_direction] = find_direction(hash_forecast[:wind_direction])
         hash_forecast[:wave_direction] = find_direction(hash_forecast[:wave_direction])
-        p hash_forecast
         hash_forecast[:spot_id] = Spot.find_by(name: 'Guincho').id
         hash_forecast[:time_slot] = timestamp.hour
         hash_forecast[:date] = forcast["time"].split('T')[0]
+        hash_forecast[:weather_code] = "02d"
         fc = Forecast.create(hash_forecast)
-        puts fc
         hash_forecast = Hash.new(0)
       end
     end

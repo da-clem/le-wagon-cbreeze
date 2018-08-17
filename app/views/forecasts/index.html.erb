@@ -9,3 +9,12 @@
   <%= link_to "Remove from My sessions", mysessions_destroy_path(forecast.id), method: :delete %>
 <% end %>
 
+<script>
+  document.querySelectorAll(`[data-day='${new Date().toJSON().slice(0,10)}'][data-time='11']`).forEach(function(obj) {
+    obj.style.display="block";
+  });
+
+
+
+
+</script>
