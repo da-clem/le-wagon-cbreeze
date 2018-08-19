@@ -1,5 +1,5 @@
 .card {
-  z-index: 0;
+  // z-index: 1;
   width: 335px;
   background: linear-gradient($primary-blue, $danger-blue);
   // background-image: url(logo_wo_name_white.png);
@@ -11,7 +11,6 @@
   border: 1px solid white;
   box-shadow: 1px 1px 2px $gray-lighter;
   margin-top: 10px;
-  padding: 10px;
   color: white;
   position: relative;
   p {
