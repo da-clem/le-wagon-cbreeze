@@ -1,5 +1,5 @@
 .card {
-  margin-left: 20px;
+  margin-left: 5px;
   z-index: 0;
   width: 335px;
   background: linear-gradient($primary-blue, $danger-blue);
@@ -33,21 +33,24 @@
 
 .head-weather-container {
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: 10px;
   display: flex;
   align-items: center;
-  height: 31px;
+  height: 30px;
 }
 
 
 .weather-icon {
+  display: inline-block;
   width: 20px;
 }
 
 .weather-temp p {
   font-size: 12px;
-  margin-top: 1px;
+  display: inline-block;
+  margin-left : 2px;
+  margin-bottom: 10px;
 }
 
 .beach-name p {
@@ -56,16 +59,16 @@
 
 .session-icon {
   position: absolute;
-  top: 10px;
+  top: 17px;
   right: 10px;
 }
 
 .card-body-container {
   display: flex;
   justify-content: space-around;
-  * {
-    margin: 0;
-  }
+  // * {
+  //   margin: 0;
+  // }
   // background-color: red;
 }
 
@@ -78,18 +81,19 @@
 }
 
 .secondary-info-wind {
-  margin-left: -7px;
+  // margin-left: -7px;
   display: flex;
   align-item: center;
   justify-content: center;
 }
 
-.wind-icon img {
-  margin-left: 15px;
+.wind-icon {
+  align-self: center;
   width: 30px;
 }
 
-.wind-speed p {
+.wind-speed {
+  align-self: center;
   font-size: 22px;
 }
 
