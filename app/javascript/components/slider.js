@@ -1,5 +1,5 @@
 function actionSlider(){
-
+  console.log("hey");
   const windSlider = new Slider('#wind-slider', {
   tooltip: 'hide'
   }).on('slide', slideWindAction);
