@@ -1,8 +1,8 @@
-<div class='card-wrapper'>
+<div class='card-wrapper' data-day='<%=forecast.date%>' data-time='<%=forecast.time_slot%>'>
   <div class='row'>
     <div class='col-xs-12 col-sm-4'>
       <div class='card-container'>
-        <div class='card' data-day='<%=forecast.date%>' data-time='<%=forecast.time_slot%>'>
+        <div class='card'>
           <div class='head-weather-container'>
             <%= cl_image_tag "#{forecast.weather_code}", width: 20, height: 20 %>
             <div class='weather-temp'>

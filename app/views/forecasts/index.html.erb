@@ -13,7 +13,7 @@
 
 <script>
   function showCardsForDay(day=null){
-    document.querySelectorAll(".card").forEach(function(obj) {
+    document.querySelectorAll(".card-wrapper").forEach(function(obj) {
       obj.style.display="none";
     });
 
@@ -32,7 +32,7 @@
   function showCardsForHour(hour){
     day = document.querySelector(".active").getAttribute('data-day');
 
-    document.querySelectorAll(".card").forEach(function(obj) {
+    document.querySelectorAll(".card-wrapper").forEach(function(obj) {
       obj.style.display="none";
     });
 
