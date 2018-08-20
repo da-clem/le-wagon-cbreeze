@@ -49,9 +49,11 @@
     <div class="new-beach-card">
       <div class="form">
       <%= simple_form_for [@favorite_spot] do |f| %>
-        <%= f.association :spot %>
+        <%= f.association :spot, collection: Spot.order('name ASC'),
+                          label: 'Follow a new spot'
+        %>
         <div class="container-center-elements">
-        <%= f.submit "Add new spot", class: "btn btn-primary" %>
+        <%= f.submit "Add", class: "btn btn-primary" %>
         </div>
       <% end %>
       </div>
