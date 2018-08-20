@@ -87,13 +87,13 @@
   justify-content: center;
 }
 
-.wind-icon img {
-  margin-left: 15px;
+.wind-icon {
+  align-self: center;
   width: 30px;
 }
 
-.wind-speed p {
-  margin-left:10px;
+.wind-speed {
+  align-self: center;
   font-size: 22px;
 }
 
