@@ -23,13 +23,13 @@
 .new-beach-card {
   z-index: 0;
   width: 335px;
-  background: white;
+  background: $primary-blue;
   border-radius: 4px;
   border: 1px solid white;
   box-shadow: 1px 1px 2px $gray-lighter;
   margin-top: 10px;
   padding: 10px;
-  color: $primary-blue;
+  color: white;
   position: relative;
   p {
     margin-bottom: 0;
