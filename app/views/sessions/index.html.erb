@@ -1,6 +1,10 @@
-<h1>My sessions</h1>
-
 <% @sessions.each do |session| %>
+
+<div class="session-separator">
+ <h4 class="text-center"><%= get_day_and_date(session) %> -
+ <%= get_timeslot(session) %> </h4>
+</div>
+
   <%= render 'shared/card', forecast: session.forecast%>
 <% end %>
 
