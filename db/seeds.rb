@@ -59,6 +59,42 @@ spots_attributes = [
     longitude:  -8.83401
   },
   {
+    name:       'Esposende',
+    country:    'Portugal',
+    latitude:   41.53965,
+    longitude:  -8.7924
+  },
+  {
+    name:       'Costa Nova',
+    country:    'Portugal',
+    latitude:   40.61909,
+    longitude:  -8.75483
+  },
+  {
+    name:       'Figueira da Foz',
+    country:    'Portugal',
+    latitude:   40.15368,
+    longitude:  -8.87695
+  },
+  {
+    name:       'Peniche - North',
+    country:    'Portugal',
+    latitude:   39.37459,
+    longitude:  -9.33639
+  },
+  {
+    name:       'Peniche - South',
+    country:    'Portugal',
+    latitude:   39.34118,
+    longitude:  -9.36271
+  },
+  {
+    name:       'Ericeira',
+    country:    'Portugal',
+    latitude:   38.94297,
+    longitude:  -9.41687
+  },
+  {
     name:       'Guincho',
     country:    'Portugal',
     latitude:   38.7342,
@@ -71,16 +107,34 @@ spots_attributes = [
     longitude:  -9.08736
   },
   {
-    name:       'Fonte de Telha',
+    name:       'Costa Caparica',
     country:    'Portugal',
     latitude:   38.57286,
     longitude:  -9.19993
+  },
+ {
+    name:       'Lagoa de Albufeira',
+    country:    'Portugal',
+    latitude:   38.50878,
+    longitude:  -9.18452
   },
   {
     name:       'Carrapateira',
     country:    'Portugal',
     latitude:   37.20085,
     longitude:  -8.90313
+  },
+  {
+    name:       'Alvor',
+    country:    'Spain',
+    latitude:   37.12087,
+    longitude:  -8.61332
+  },
+  {
+    name:       'Caños de Meca',
+    country:    'Spain',
+    latitude:   36.18581,
+    longitude:  -6.0267
   },
   {
     name:       'Tarifa',
@@ -101,6 +155,30 @@ spots_attributes = [
     longitude:  -0.05986
   },
   {
+    name:       'Flag Beach',
+    country:    'Spain',
+    latitude:   28.72423,
+    longitude:  -13.83629
+  },
+  {
+    name:       'Flag Beach',
+    country:    'Spain',
+    latitude:   28.72423,
+    longitude:  -13.83629
+  },
+  {
+    name:       'Sotavento',
+    country:    'Spain',
+    latitude:   28.13799,
+    longitude:  -14.23587
+  },
+  {
+    name:       'El Medano',
+    country:    'Spain',
+    latitude:   28.04099,
+    longitude:  -16.54164
+  },
+  {
     name:       'Leucate',
     country:    'France',
     latitude:   42.94121,
@@ -119,10 +197,100 @@ spots_attributes = [
     longitude:  -1.0013
   },
   {
+    name:       'Lancing',
+    country:    'England',
+    latitude:   50.81966,
+    longitude:  -0.32041
+  },
+  {
+    name:       'Woolacombe',
+    country:    'England',
+    latitude:   51.17202,
+    longitude:  -4.21978
+  },
+  {
+    name:       'St Andrews',
+    country:    'Scotland',
+    latitude:   56.35688,
+    longitude:  -2.80391
+  },
+  {
+    name:       'Gwithian',
+    country:    'England',
+    latitude:   50.2281,
+    longitude:  -5.3954
+  },
+  {
     name:       'La Panne',
     country:    'Belgium',
     latitude:   51.10503,
     longitude:  2.58702
+  },
+  {
+    name:       'Terschelling',
+    country:    'Netherlands',
+    latitude:   53.42712,
+    longitude:  5.31738
+  },
+  {
+    name:       'Dakhla',
+    country:    'Morroco',
+    latitude:   23.76545,
+    longitude:  -15.92354
+  },
+  {
+    name:       'Essaouira',
+    country:    'Morroco',
+    latitude:   31.49949,
+    longitude:  -9.76731
+  },
+  {
+    name:       'Ponta Preta',
+    country:    'Cape Verde',
+    latitude:   16.60512,
+    longitude:  -22.93011
+  },
+  {
+    name:       'Preá',
+    country:    'Brazil',
+    latitude:   -2.8116,
+    longitude:  -40.41659
+  },
+  {
+    name:       'Cape Town',
+    country:    'South Africa',
+    latitude:   -33.82094,
+    longitude:  18.47316
+  },
+  {
+    name:       'One Eye',
+    country:    'Mauritius',
+    latitude:   -20.4665,
+    longitude:  57.30185
+  },
+  {
+    name:       'Ocean Beach (SF)',
+    country:    'California',
+    latitude:   37.76582,
+    longitude:  -122.51481
+  },
+  {
+    name:       'Naxos',
+    country:    'Greece',
+    latitude:   36.99792,
+    longitude:  25.3879
+  },
+  {
+    name:       'Paros',
+    country:    'Greece',
+    latitude:   37.02991,
+    longitude:  25.09708
+  },
+  {
+    name:       'Sardinia',
+    country:    'Italy',
+    latitude:   39.28749,
+    longitude:  8.43503
   },
 ]
 Spot.create!(spots_attributes)
