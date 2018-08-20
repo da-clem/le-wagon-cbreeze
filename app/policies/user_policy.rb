@@ -8,4 +8,8 @@ class UserPolicy < ApplicationPolicy
   def settings?
     true
   end
+
+  def change?
+    true
+  end
 end
