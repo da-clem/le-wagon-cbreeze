@@ -275,12 +275,6 @@ spots_attributes = [
     longitude:  -122.51481
   },
   {
-    name:       'Ocean Beach (SF)',
-    country:    'California',
-    latitude:   37.76582,
-    longitude:  -122.51481
-  },
-  {
     name:       'Naxos',
     country:    'Greece',
     latitude:   36.99792,
