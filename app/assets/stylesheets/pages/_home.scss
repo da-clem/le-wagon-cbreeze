@@ -4,22 +4,28 @@
   margin-bottom: 100px;
   margin-left: auto;
   margin-right: auto;
-  width: 400px;
-  height: 500px;
-  background-color: #FFFFFF;
-  background:
-    radial-gradient(circle at top left, $primary-blue, #FFFFFF 600px),
-    radial-gradient(farthest-corner at bottom right, $danger-blue, #FFFFFF 200px);
+  width: 70%;
+  background-color: rgba(0,0,0,0.2);
   padding: 20px;
   border-radius: 4px;
+}
 
+.form-container input.btn {
+  margin-top: 30px;
+}
+
+.form-container label {
+  font-weight: 400;
+  color: white;
 }
 
 .form-container h2 {
+  color: white;
   margin-bottom: 40px;
 }
 
-body.registrations, body.sessions {
+
+body.welcome {
   background-size: cover;
   background-repeat: no-repeat;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/assets/banner2.jpg);
