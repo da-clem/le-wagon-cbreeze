@@ -50,6 +50,11 @@ class StormGlassApiCallJob < ApplicationJob
         hash_forecast = Hash[hash_forecast.map { |key, value| [API_TRANSLATIONS[key], value/4] }]
         hash_forecast[:wind_direction] = find_direction(hash_forecast[:wind_direction])
         hash_forecast[:wave_direction] = find_direction(hash_forecast[:wave_direction])
+        hash_forecast[:temperature] = round_to_integer(hash_forecast[:temperature])
+        hash_forecast[:wind_speed] = round_to_integer(hash_forecast[:wind_speed])
+        hash_forecast[:wind_gust] = round_to_integer(hash_forecast[:wind_gust])
+        hash_forecast[:wave_heigth] = round_to_one_decimal(hash_forecast[:wave_heigth])
+        hash_forecast[:wave_period] = round_to_integer(hash_forecast[:wave_period])
         hash_forecast[:spot_id] = Spot.find_by(name: 'Guincho').id
         hash_forecast[:time_slot] = timestamp.hour
         hash_forecast[:date] = forcast["time"].split('T')[0]
@@ -68,4 +73,11 @@ class StormGlassApiCallJob < ApplicationJob
     end
   end
 
+  def round_to_integer(num)
+    num.round(0)
+  end
+
+  def round_to_one_decimal(num)
+    num.round(1)
+  end
 end
