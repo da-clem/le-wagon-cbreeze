@@ -198,6 +198,7 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    timezone (1.2.12)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (4.1.18)
@@ -245,6 +246,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  timezone (~> 1.0)
   uglifier
   web-console (>= 3.3.0)
   webpacker
