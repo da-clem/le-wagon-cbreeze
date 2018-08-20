@@ -12,6 +12,8 @@
       <%= nav_link 'Dashboard', root_path %>
       <%= nav_link 'Sessions', mysessions_path %>
       <%= nav_link 'Settings', settings_users_path(current_user) %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
+
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
@@ -26,7 +28,11 @@
         <li><%= link_to "Dashboard", root_path %></li>
         <li><%= link_to "Sessions", mysessions_path %></li>
         <li><%= link_to "Settings", settings_users_path(current_user) %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
       </ul>
     </div>
   </div>
 </div>
+
+
+
