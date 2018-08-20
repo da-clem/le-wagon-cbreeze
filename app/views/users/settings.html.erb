@@ -21,6 +21,13 @@
   <div class="slider-container">
     <input id="wave-slider" type="text" class="slider" value="" data-slider-min="0" data-slider-max="5" data-slider-step="0.5" data-slider-value="[<%= waves_min %>,<%= waves_max %>]"/>
   </div>
+  <%= simple_form_for([ current_user ], :url => change_users_path, :method => :patch, remote: true, html: { class: "hidden"}) do |form| %>
+    <%= form.input :pref_wind_speed_min %>
+    <%= form.input :pref_wind_speed_max %>
+    <%= form.input :pref_wave_height_min %>
+    <%= form.input :pref_wave_height_max %>
+    <%= form.button :submit, id: "trigger_user_patch" %>
+  <% end %>
 </div>
 
 <div class="page-separator spots-separator">

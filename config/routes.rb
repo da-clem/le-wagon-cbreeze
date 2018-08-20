@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:update] do
     collection do
       get 'settings', to: "users#settings"
+      patch 'change', to: "users#change"
     end
     #resources :sessions, only: [:create, :destroy, :index]
   end
