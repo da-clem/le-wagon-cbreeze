@@ -4,11 +4,12 @@
 <% end %>
 
 
-
+<div class="container">
 <% @forecasts.each do |forecast| %>
 
   <%= render 'shared/card', sessions: @sessions, forecast: forecast %>
 <% end %>
+</div>
 
 <script>
   function showCardsForDay(day=null){
