@@ -11,7 +11,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 
   </head>
-  <body>
+  <body class="<%= controller_name %>">
     <% #unless current_page?(root_path) || current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
     <%unless current_user.nil?%>
      <%= render 'shared/navbar' %>
