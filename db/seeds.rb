@@ -161,10 +161,10 @@ spots_attributes = [
     longitude:  -13.83629
   },
   {
-    name:       'Flag Beach',
-    country:    'Spain',
-    latitude:   28.72423,
-    longitude:  -13.83629
+    name:       'Fromentine',
+    country:    'France',
+    latitude:   46.90594,
+    longitude:  -2.17563
   },
   {
     name:       'Sotavento',
