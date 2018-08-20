@@ -29,4 +29,19 @@ module ApplicationHelper
   def waves_max
     current_user.pref_wave_height_max == 0.0 ? 1.0 : current_user.pref_wave_height_max
   end
+
+  def get_day_and_date(session)
+    Date.parse(session.forecast.date).strftime("%A - %d %b")
+  end
+
+  def get_timeslot(session)
+    case session.forecast.time_slot
+    when "11"
+      "Morning"
+    when "15"
+      "Afternoon"
+    else
+      "Evening"
+    end
+  end
 end
