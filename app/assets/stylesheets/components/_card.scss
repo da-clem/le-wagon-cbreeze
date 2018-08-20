@@ -2,7 +2,6 @@
   margin-left: 5px;
   z-index: 0;
   width: 335px;
-  background: linear-gradient($primary-blue, $danger-blue);
   // background-image: url(logo_wo_name_white.png);
   // opacity: 0,1;
   // background-repeat: no-repeat;
@@ -18,6 +17,14 @@
   p {
     margin-bottom: 0;
   }
+}
+
+.card-within-preference {
+  background: linear-gradient($primary-blue, $danger-blue);
+}
+
+.card-outside-preference {
+  background: linear-gradient($gray, $gray-dark);
 }
 
 .card-container {
