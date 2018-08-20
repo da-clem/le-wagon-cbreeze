@@ -38,7 +38,9 @@
               <p><%= spot.country %></p>
             </div>
             <div class="beach-actions">
-              <p> <%= link_to "Delete", favorite_spot_path(spot), method: :delete %> </p>
+              <%= link_to favorite_spot_path(spot), method: :delete do %>
+                 <i class="fas fa-minus-circle"> </i>
+              <% end %>
             </div>
         </div>
       </div>
