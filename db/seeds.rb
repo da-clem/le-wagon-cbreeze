@@ -98,7 +98,8 @@ spots_attributes = [
     name:       'Guincho',
     country:    'Portugal',
     latitude:   38.7342,
-    longitude:  -9.4745
+    longitude:  -9.4745,
+    timezone:   'Europe/Lisbon'
   },
   {
     name:       'Nazare',
@@ -272,7 +273,8 @@ spots_attributes = [
     name:       'Ocean Beach (SF)',
     country:    'California',
     latitude:   37.76582,
-    longitude:  -122.51481
+    longitude:  -122.51481,
+    timezone:   'America/Los_Angeles'
   },
   {
     name:       'Naxos',
