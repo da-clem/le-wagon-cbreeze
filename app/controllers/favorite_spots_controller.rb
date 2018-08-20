@@ -7,7 +7,7 @@ class FavoriteSpotsController < ApplicationController
     if @favorite_spot.save
       redirect_to settings_users_path
     else
-      #render :new
+      render settings_users_path
     end
   end
 
