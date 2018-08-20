@@ -44,4 +44,15 @@ module ApplicationHelper
       "Evening"
     end
   end
+
+  def check_if_preferences_match(forecast)
+     if forecast.wave_heigth >= current_user.pref_wave_height_min &&
+      forecast.wave_heigth <= current_user.pref_wave_height_max &&
+      forecast.wind_speed >= current_user.pref_wind_speed_min &&
+      forecast.wind_speed <= current_user.pref_wind_speed_max
+      return "card-within-preference"
+    else
+      return "card-outside-preference"
+    end
+  end
 end
