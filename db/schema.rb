@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_16_111304) do
+ActiveRecord::Schema.define(version: 2018_08_20_104559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,13 +28,13 @@ ActiveRecord::Schema.define(version: 2018_08_16_111304) do
     t.string "date"
     t.bigint "spot_id"
     t.string "time_slot"
-    t.float "wind_speed"
+    t.integer "wind_speed"
     t.float "wave_heigth"
     t.string "wind_direction"
     t.string "wave_direction"
-    t.float "wind_gust"
-    t.float "wave_period"
-    t.float "temperature"
+    t.integer "wind_gust"
+    t.integer "wave_period"
+    t.integer "temperature"
     t.string "weather_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(version: 2018_08_16_111304) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.float "pref_wind_speed_min"
-    t.float "pref_wind_speed_max"
+    t.integer "pref_wind_speed_min"
+    t.integer "pref_wind_speed_max"
     t.float "pref_wave_height_min"
     t.float "pref_wave_height_max"
     t.index ["email"], name: "index_users_on_email", unique: true
