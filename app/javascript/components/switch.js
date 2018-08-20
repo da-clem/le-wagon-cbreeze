@@ -7,10 +7,13 @@ function actionSwitch(){
 
 function toggleEvent(){
   console.log(this.hasAttribute("checked"));
-  if(this.hasAttribute("checked"))
+  if(this.hasAttribute("checked")){
     this.parentNode.querySelector('.removeSession').click();
-  else
+  }
+  else{
     this.parentNode.querySelector('.addSession').click()
+  }
+  this.hasAttribute('checked') ? this.removeAttribute('checked') : this.setAttribute('checked', true);
 }
 
 export { actionSwitch };
