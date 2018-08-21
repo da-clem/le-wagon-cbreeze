@@ -12,4 +12,12 @@ class SessionPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def callback?
+    true
+  end
+
+  def calendars?
+    true
+  end
 end
