@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   get 'mysessions', to: 'sessions#index', as: :mysessions
   post 'mysessions/:id', to: 'sessions#create', as: :mysessions_create
   delete 'mysessions/:id', to: 'sessions#destroy', as: :mysessions_destroy
+  get 'mysessions/callback', to: 'sessions#callback', as: :callback
+  get 'calendars', to: 'sessions#calendars', as: :calendars
+
 end
