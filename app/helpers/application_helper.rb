@@ -30,8 +30,12 @@ module ApplicationHelper
     current_user.pref_wave_height_max == 0.0 ? 1.0 : current_user.pref_wave_height_max
   end
 
-  def get_day_and_date(session)
+  def get_day_and_date_old(session)
     Date.parse(session.forecast.date).strftime("%A - %d %b")
+  end
+
+  def get_day_and_date(day)
+    Date.parse(day).strftime("%A - %d %b")
   end
 
   def get_timeslot(session)
