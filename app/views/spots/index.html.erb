@@ -1,5 +1,22 @@
-<h1>All the spots</h1>
-<% @spots.each do |spot| %>
-  <h3><%= spot.name %></h3>
-  <p><%= spot.country %></p>
+<h5 class="session-separator text-center">Kite Spots</h5>
+<div class="container">
+  <div
+    id="map"
+    style="width: 30%vh;
+    height: 400px;"
+    data-markers="<%= @markers.to_json %>"
+  ></div>
+</div>
+
+<div class="container-center-elements">
+  <%= link_to "Back to Settings", settings_users_path(current_user), class: "btn btn-danger" %>
+</div>
+
+<% content_for :external_script do %>
+
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+
+<%= javascript_pack_tag "map" %>
+
 <% end %>
+
