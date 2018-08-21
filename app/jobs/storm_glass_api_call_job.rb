@@ -36,9 +36,12 @@ class StormGlassApiCallJob < ApplicationJob
       lat = current_spot.latitude
       long = current_spot.longitude
       Time.zone = current_spot.timezone
-      timezone_diff =  Time.zone.now.formatted_offset.to_i
-      endTS = (Time.now.beginning_of_day+5.days-timezone_diff.hours).to_i
-      startTS = (Time.now.beginning_of_day-timezone_diff.hours).to_i
+      startTS = Time.zone.yesterday.beginning_of_day.utc.to_i
+      endTS = (Time.zone.yesterday.beginning_of_day.utc + 6.days).to_i
+      #timezone_diff =  Time.zone.now.formatted_offset.to_i
+      #endTS = (Time.now.beginning_of_day+5.days-timezone_diff.hours).to_i
+      #startTS = (Time.now.beginning_of_day-timezone_diff.hours).to_i
+
 
       url = "https://api.stormglass.io/point?lat=#{lat}&lng=#{long}&params=airTemperature,waveHeight,gust,waveDirection,wavePeriod,windDirection,windSpeed&end=#{endTS}&start=#{startTS}"
       data_serialized = open(url, "Authorization" => "e2b60dd4-8f9c-11e8-83ef-0242ac130004-e2b60fdc-8f9c-11e8-83ef-0242ac130004").read
@@ -55,7 +58,7 @@ class StormGlassApiCallJob < ApplicationJob
 
       data["hours"].each do |forcast|
         timestamp = Time.parse(forcast["time"])
-        timestamp += timezone_diff.hours
+        timestamp = timestamp.in_time_zone
         puts timestamp
         if (8..19).include?(timestamp.hour)
           forcast.each do |key, value|
@@ -73,9 +76,10 @@ class StormGlassApiCallJob < ApplicationJob
           hash_forecast[:wave_period] = round_to_integer(hash_forecast[:wave_period])
           hash_forecast[:spot_id] = current_spot.id
           hash_forecast[:time_slot] = timestamp.hour
-          hash_forecast[:date] = forcast["time"].split('T')[0]
+          hash_forecast[:date] = timestamp.strftime("%Y-%m-%d")
           hash_forecast[:weather_code] = "02d"
-          fc = Forecast.create(hash_forecast)
+          fc = Forecast.create!(hash_forecast)
+          p fc
           hash_forecast = Hash.new(0)
         end
       end
