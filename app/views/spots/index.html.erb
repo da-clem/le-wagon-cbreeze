@@ -3,3 +3,19 @@
   <h3><%= spot.name %></h3>
   <p><%= spot.country %></p>
 <% end %>
+
+
+<div
+  id="map"
+  style="width: 100%vh;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
+
+<% content_for :external_script do %>
+
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+
+<%= javascript_pack_tag "map" %>
+
+<% end %>
