@@ -1,3 +1,4 @@
+console.log("hello from map.js")
 import GMaps from 'gmaps/gmaps.js';
 
 const mapElement = document.getElementById('map');
