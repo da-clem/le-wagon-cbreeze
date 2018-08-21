@@ -98,7 +98,8 @@ spots_attributes = [
     name:       'Guincho',
     country:    'Portugal',
     latitude:   38.7342,
-    longitude:  -9.4745
+    longitude:  -9.4745,
+    timezone:   'Europe/Lisbon'
   },
   {
     name:       'Nazare',
@@ -161,10 +162,10 @@ spots_attributes = [
     longitude:  -13.83629
   },
   {
-    name:       'Flag Beach',
-    country:    'Spain',
-    latitude:   28.72423,
-    longitude:  -13.83629
+    name:       'Fromentine',
+    country:    'France',
+    latitude:   46.90594,
+    longitude:  -2.17563
   },
   {
     name:       'Sotavento',
@@ -272,7 +273,8 @@ spots_attributes = [
     name:       'Ocean Beach (SF)',
     country:    'California',
     latitude:   37.76582,
-    longitude:  -122.51481
+    longitude:  -122.51481,
+    timezone:   'America/Los_Angeles'
   },
   {
     name:       'Naxos',

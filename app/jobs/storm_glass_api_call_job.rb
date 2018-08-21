@@ -1,6 +1,8 @@
 class StormGlassApiCallJob < ApplicationJob
   queue_as :default
 
+
+
   API_TRANSLATIONS = {
     "airTemperature" => :temperature,
     "gust" => :wind_gust,
@@ -28,39 +30,54 @@ class StormGlassApiCallJob < ApplicationJob
     require 'json'
     require 'open-uri'
 
-    endTS = (Time.now.beginning_of_day+5.days).to_i
+    ['Ocean Beach (SF)', 'Guincho'].each do |beach_name|
+      puts beach_name
+      current_spot = Spot.where(name: beach_name)[0]
+      lat = current_spot.latitude
+      long = current_spot.longitude
+      Time.zone = current_spot.timezone
+      timezone_diff =  Time.zone.now.formatted_offset.to_i
+      endTS = (Time.now.beginning_of_day+5.days-timezone_diff.hours).to_i
+      startTS = (Time.now.beginning_of_day-timezone_diff.hours).to_i
 
-    url = 'https://api.stormglass.io/point?lat=38.7342&lng=-9.4745&params=airTemperature,waveHeight,gust,waveDirection,wavePeriod,windDirection,windSpeed&end=' + endTS.to_s
-    data_serialized = open(url, "Authorization" => "e2b60dd4-8f9c-11e8-83ef-0242ac130004-e2b60fdc-8f9c-11e8-83ef-0242ac130004").read
-    data = JSON.parse(data_serialized)
+      url = "https://api.stormglass.io/point?lat=#{lat}&lng=#{long}&params=airTemperature,waveHeight,gust,waveDirection,wavePeriod,windDirection,windSpeed&end=#{endTS}&start=#{startTS}"
+      data_serialized = open(url, "Authorization" => "e2b60dd4-8f9c-11e8-83ef-0242ac130004-e2b60fdc-8f9c-11e8-83ef-0242ac130004").read
+      data = JSON.parse(data_serialized)
 
-    #file = File.read('app/jobs/baba.json')
-    #data = JSON.parse(file)
-
-    hash_forecast = Hash.new(0)
-
-    data["hours"].each do |forcast|
-      timestamp = Time.parse(forcast["time"])
-      if (8..19).include?(timestamp.hour)
-        forcast.each do |key, value|
-          hash_forecast[key] += value.detect{|h| h["source"]=="sg"}["value"] if value.kind_of?(Array) && !value.empty?
-        end
+      File.open("public/baba_#{beach_name}.json","w") do |f|
+        f.write(data)
       end
-      if [11, 15, 19].include? timestamp.hour
-        hash_forecast = Hash[hash_forecast.map { |key, value| [API_TRANSLATIONS[key], value/4] }]
-        hash_forecast[:wind_direction] = find_direction(hash_forecast[:wind_direction])
-        hash_forecast[:wave_direction] = find_direction(hash_forecast[:wave_direction])
-        hash_forecast[:temperature] = round_to_integer(hash_forecast[:temperature])
-        hash_forecast[:wind_speed] = round_to_integer(hash_forecast[:wind_speed])
-        hash_forecast[:wind_gust] = round_to_integer(hash_forecast[:wind_gust])
-        hash_forecast[:wave_heigth] = round_to_one_decimal(hash_forecast[:wave_heigth])
-        hash_forecast[:wave_period] = round_to_integer(hash_forecast[:wave_period])
-        hash_forecast[:spot_id] = Spot.find_by(name: 'Guincho').id
-        hash_forecast[:time_slot] = timestamp.hour
-        hash_forecast[:date] = forcast["time"].split('T')[0]
-        hash_forecast[:weather_code] = "02d"
-        fc = Forecast.create(hash_forecast)
-        hash_forecast = Hash.new(0)
+
+      #file = File.read('app/jobs/baba.json')
+      #data = JSON.parse(file)
+
+      hash_forecast = Hash.new(0)
+
+      data["hours"].each do |forcast|
+        timestamp = Time.parse(forcast["time"])
+        timestamp += timezone_diff.hours
+        puts timestamp
+        if (8..19).include?(timestamp.hour)
+          forcast.each do |key, value|
+            hash_forecast[key] += value.detect{|h| h["source"]=="sg"}["value"] if value.kind_of?(Array) && !value.empty?
+          end
+        end
+        if [11, 15, 19].include? timestamp.hour
+          hash_forecast = Hash[hash_forecast.map { |key, value| [API_TRANSLATIONS[key], value/4] }]
+          hash_forecast[:wind_direction] = find_direction(hash_forecast[:wind_direction])
+          hash_forecast[:wave_direction] = find_direction(hash_forecast[:wave_direction])
+          hash_forecast[:temperature] = round_to_integer(hash_forecast[:temperature])
+          hash_forecast[:wind_speed] = round_to_integer(hash_forecast[:wind_speed]*1.943844)
+          hash_forecast[:wind_gust] = round_to_integer(hash_forecast[:wind_gust]*1.943844)
+          hash_forecast[:wave_heigth] = round_to_one_decimal(hash_forecast[:wave_heigth])
+          hash_forecast[:wave_period] = round_to_integer(hash_forecast[:wave_period])
+          hash_forecast[:spot_id] = current_spot.id
+          hash_forecast[:time_slot] = timestamp.hour
+          hash_forecast[:date] = forcast["time"].split('T')[0]
+          hash_forecast[:weather_code] = "02d"
+          fc = Forecast.create(hash_forecast)
+          hash_forecast = Hash.new(0)
+        end
       end
     end
   end

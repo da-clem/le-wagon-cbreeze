@@ -3,18 +3,18 @@
  <h4 class="text-center">Preferences</h4>
 </div>
 
-
 <div class="settings-slider-container">
+    <%= image_tag "icons/wind_grey.svg", class: "preferences-icon"%>
   <h4 class="text-center">
-    <%= image_tag "icons/wind_grey.svg", width: 40 %>
     <span id="minWindSpan"><%= wind_min %></span> to
     <span id="maxWindSpan"><%= wind_max %></span> knots
   </h4>
   <div class="slider-container">
     <input id="wind-slider" type="text" class="slider" value="" data-slider-min="0" data-slider-max="40" data-slider-step="1" data-slider-value="[<%= wind_min %>,<%= wind_max %>]"/>
   </div>
+
+  <%= image_tag "icons/wave_grey.svg", class: "preferences-icon" %>
   <h4 class="text-center">
-    <%= image_tag "icons/wave_grey.svg", width: 40 %>
     <span id="minWaveSpan"> <%= waves_min %> </span> to
     <span id="maxWaveSpan"> <%= waves_max %> </span> meters
   </h4>
@@ -35,7 +35,7 @@
 </div>
 
 <div class="container-center-elements">
-<div class='card-wrapper'>
+  <div class='card-wrapper'>
    <% current_user.spots.each do |spot| %>
      <div class='row'>
         <div class='col-xs-12 col-sm-4'>
@@ -53,26 +53,30 @@
       </div>
     </div>
   <% end %>
+  </div>
+</div>
+
+<div class="page-separator spots-separator">
+  <h4 class="text-center">Add a new Spot</h4>
+</div>
+
+<div class="container-center-elements">
+  <div class='card-wrapper'>
     <div class="new-beach-card">
       <div class="form">
       <%= simple_form_for [@favorite_spot] do |f| %>
         <%= f.association :spot, collection: Spot.order('name ASC'),
-                          label: 'Follow a new spot'
+                          prompt: "Select a Spot",
+                          label: false
         %>
         <div class="container-center-elements">
-        <%= f.submit "Add", class: "btn btn-primary" %>
+          <%= f.submit "Add", class: "btn btn-primary" %>
         </div>
       <% end %>
       </div>
    </div>
   </div>
 </div>
-
-<div class="page-separator spots-separator">
-  <h4 class="text-center"</h4>
-</div>
-
-
 
 
 
