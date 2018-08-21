@@ -25,6 +25,7 @@
 }
 .tab.active {
   background: white;
+  box-shadow: 0px -1px 5px 3px rgba(219,219,219,1);
   color: $brand-primary;
   border-bottom: 0px;
 }
