@@ -59,4 +59,9 @@ module ApplicationHelper
       return "card-outside-preference"
     end
   end
+
+
+
+
+
 end
