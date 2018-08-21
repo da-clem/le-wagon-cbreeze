@@ -10,7 +10,7 @@ class SpotsController < ApplicationController
         lng: spot.longitude,
         infoWindow: {
             content: render_to_string(partial: "/shared/info_window", locals: { spot: spot }) },
-        icon: { url: maps_icon_helper(current_user, spot) }
+        icon: { url: maps_icon_helper(current_user, spot) },
       }
     end
   end
