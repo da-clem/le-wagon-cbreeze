@@ -12,10 +12,10 @@ class FavoriteSpotsController < ApplicationController
   end
 
   def destroy
-    @favorite_spot = FavoriteSpot.where(spot_id: params[:id], user_id: current_user)
+    @favorite_spot = FavoriteSpot.where(spot_id: params[:id], user_id: current_user).first
     authorize @favorite_spot
 
-    @favorite_spot.destroy_all
+    @favorite_spot.destroy
     redirect_to settings_users_path
   end
 
