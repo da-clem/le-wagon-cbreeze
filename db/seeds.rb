@@ -127,7 +127,7 @@ spots_attributes = [
   },
   {
     name:       'Alvor',
-    country:    'Spain',
+    country:    'Portugal',
     latitude:   37.12087,
     longitude:  -8.61332
   },
@@ -293,6 +293,66 @@ spots_attributes = [
     country:    'Italy',
     latitude:   39.28749,
     longitude:  8.43503
+  },
+  {
+    name:       'Cabarete',
+    country:    'Dominican Republic',
+    latitude:   19.76597,
+    longitude:  -70.41978
+  },
+  {
+    name:       'Fehmarn',
+    country:    'Germany',
+    latitude:   54.42831,
+    longitude:  11.08657
+  },
+  {
+    name:       'Tollerstranda',
+    country:    'Norway',
+    latitude:   59.33295,
+    longitude:  10.66275
+  },
+  {
+    name:       'Hookipa Beach',
+    country:    'Hawaii',
+    latitude:   20.9353,
+    longitude:  -156.36141
+  },
+  {
+    name:       'El Gouna',
+    country:    'Egypt',
+    latitude:   27.42145,
+    longitude:  33.67858
+  },
+  {
+    name:       'El Gouna',
+    country:    'Egypt',
+    latitude:   -12.18762,
+    longitude:  49.35683
+  },
+  {
+    name:       'Paje',
+    country:    'Zanzibar',
+    latitude:   -6.27059,
+    longitude:  39.54597
+  },
+  {
+    name:       'Long Bay',
+    country:    'Turks and Caicos',
+    latitude:   21.79313,
+    longitude:  -72.14756
+  },
+  {
+    name:       'Cape Hatteras',
+    country:    'North Carolina',
+    latitude:   35.22697,
+    longitude:  -75.61752
+  },
+  {
+    name:       'La Ventana',
+    country:    'Mexico',
+    latitude:   24.06183,
+    longitude:  -109.98915
   },
 ]
 Spot.create!(spots_attributes)
