@@ -3,6 +3,10 @@
   <%= render 'shared/timeslottabs' %>
 <% end %>
 
+<% if current_user.favorite_spots.empty? %>
+  <%= render 'shared/welcome' %>
+<% end %>
+
 
 <div class="container">
 <% @forecasts.each do |forecast| %>

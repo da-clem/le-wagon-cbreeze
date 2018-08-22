@@ -9,3 +9,9 @@
   color: $primary-blue;
   font-size: 20px;
 }
+
+.container-space-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
