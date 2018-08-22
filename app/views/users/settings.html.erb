@@ -9,11 +9,11 @@
       <div class="settings-card">
       <%= image_tag "icons/wind_grey.svg", class: "preferences-icon"%>
         <h5 class="text-center">
-          <span id="minWindSpan"><%= wind_min %></span> to
-          <span id="maxWindSpan"><%= wind_max %></span> knots
+          <span id="minWindSpan"><%= current_user.pref_wind_speed_min %></span> to
+          <span id="maxWindSpan"><%= current_user.pref_wind_speed_max %></span> knots
         </h5>
         <div class="slider-container">
-          <input id="wind-slider" type="text" class="slider" value="" data-slider-min="0" data-slider-max="40" data-slider-step="1" data-slider-value="[<%= wind_min %>,<%= wind_max %>]"/>
+          <input id="wind-slider" type="text" class="slider" value="" data-slider-min="0" data-slider-max="40" data-slider-step="1" data-slider-value="[<%= current_user.pref_wind_speed_min %>,<%= current_user.pref_wind_speed_max %>]"/>
           </div>
         </div>
     </div>
@@ -22,11 +22,11 @@
       <div class="settings-card">
       <%= image_tag "icons/wave_grey.svg", class: "preferences-icon" %>
         <h5 class="text-center">
-          <span id="minWaveSpan"> <%= waves_min %> </span> to
-          <span id="maxWaveSpan"> <%= waves_max %> </span> meters
+          <span id="minWaveSpan"> <%= current_user.pref_wave_height_min %> </span> to
+          <span id="maxWaveSpan"> <%= current_user.pref_wave_height_max %> </span> meters
         </h5>
         <div class="slider-container">
-          <input id="wave-slider" type="text" class="slider" value="" data-slider-min="0" data-slider-max="5" data-slider-step="0.5" data-slider-value="[<%= waves_min %>,<%= waves_max %>]"/>
+          <input id="wave-slider" type="text" class="slider" value="" data-slider-min="0" data-slider-max="5" data-slider-step="0.5" data-slider-value="[<%= current_user.pref_wave_height_min.round %>,<%= current_user.pref_wave_height_max %>]"/>
         </div>
         <%= simple_form_for([ current_user ], :url => change_users_path, :method => :patch, remote: true, html: { class: "hidden"}) do |form| %>
           <%= form.input :pref_wind_speed_min %>
