@@ -365,20 +365,6 @@ spots_attributes = [
     timezone:   'Pacific/Honolulu'
   },
   {
-    name:       'El Gouna',
-    country:    'Egypt',
-    latitude:   27.42145,
-    longitude:  33.67858,
-    timezone:   'Africa/Cairo'
-  },
-  {
-    name:       'El Gouna',
-    country:    'Egypt',
-    latitude:   -12.18762,
-    longitude:  49.35683,
-    timezone:   'Africa/Cairo'
-  },
-  {
     name:       'Paje',
     country:    'Zanzibar',
     latitude:   -6.27059,

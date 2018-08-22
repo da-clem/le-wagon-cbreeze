@@ -5,7 +5,7 @@
       <% if current_user.favorite_spots.exists?(spot_id: spot.id) %>
         <%= button_to 'Remove', favorite_spot_path(spot), method: :delete, class: "btn-xs btn-danger" %>
       <% else %>
-       <%= button_to 'Add', favorite_spots_path(favorite_spot: {spot_id: spot.id }), method: :post, class: "btn-xs btn-primary" %>
+        <%= button_to 'Add', favorite_spots_path(favorite_spot: {spot_id: spot.id }), method: :post, class: "btn-xs btn-primary" %>
       <% end %>
     </div>
   </div>

@@ -30,9 +30,9 @@ class StormGlassApiCallJob < ApplicationJob
     require 'json'
     require 'open-uri'
 
-    ['Ocean Beach (SF)', 'Guincho'].each do |beach_name|
-      puts beach_name
-      current_spot = Spot.where(name: beach_name)[0]
+    Spot.all.each do |spot|
+      puts spot.name
+      current_spot = spot
       lat = current_spot.latitude
       long = current_spot.longitude
       Time.zone = current_spot.timezone
@@ -43,9 +43,9 @@ class StormGlassApiCallJob < ApplicationJob
       data_serialized = open(url, "Authorization" => "e2b60dd4-8f9c-11e8-83ef-0242ac130004-e2b60fdc-8f9c-11e8-83ef-0242ac130004").read
       data = JSON.parse(data_serialized)
 
-      File.open("public/baba_#{beach_name}.json","w") do |f|
-        f.write(data)
-      end
+      #File.open("public/baba_#{beach_name}.json","w") do |f|
+      #  f.write(data)
+      #end
 
       #file = File.read('app/jobs/baba.json')
       #data = JSON.parse(file)
@@ -66,6 +66,7 @@ class StormGlassApiCallJob < ApplicationJob
           hash_forecast[:wind_direction] = find_direction(hash_forecast[:wind_direction])
           hash_forecast[:wave_direction] = find_direction(hash_forecast[:wave_direction])
           hash_forecast[:temperature] = round_to_integer(hash_forecast[:temperature])
+          puts "bleme" + hash_forecast[:wind_speed].to_s
           hash_forecast[:wind_speed] = round_to_integer(hash_forecast[:wind_speed]*1.943844)
           hash_forecast[:wind_gust] = round_to_integer(hash_forecast[:wind_gust]*1.943844)
           hash_forecast[:wave_heigth] = round_to_one_decimal(hash_forecast[:wave_heigth])
