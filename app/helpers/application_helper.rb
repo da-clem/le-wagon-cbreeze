@@ -14,22 +14,6 @@ module ApplicationHelper
     link_to text, path, class: nav_classes(path)
   end
 
-  def wind_min
-    current_user.pref_wind_speed_min == 0.0 ? 10 : current_user.pref_wind_speed_min
-  end
-
-  def wind_max
-    current_user.pref_wind_speed_max == 0.0 ? 22 : current_user.pref_wind_speed_max
-  end
-
-  def waves_min
-    current_user.pref_wave_height_min == 0.0 ? 0.0 : current_user.pref_wave_height_min
-  end
-
-  def waves_max
-    current_user.pref_wave_height_max == 0.0 ? 1.0 : current_user.pref_wave_height_max
-  end
-
   def get_day_and_date_old(session)
     Date.parse(session.forecast.date).strftime("%A - %d %b")
   end
