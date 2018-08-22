@@ -299,6 +299,7 @@ Spot.create!(spots_attributes)
 puts 'Finished!'
 
 StormGlassApiCallJob.perform_now
+OpenweathermapJob.perform_now
 
 # Forecasts
 puts 'Finished!'
