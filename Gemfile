@@ -19,8 +19,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'cloudinary'
-gem 'google-api-client', require: 'google/apis/calendar_v3'
-gem 'rack-cors', require: 'rack/cors'
+gem 'google-api-client', '0.20.0'
+gem 'omniauth-google-oauth2'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

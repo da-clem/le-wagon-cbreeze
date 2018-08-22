@@ -20,6 +20,13 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'cbreeze.info@gmail.com'
 
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'],
+  ENV['GOOGLE_CLIENT_SECRET'],
+  { access_type: "offline",
+    prompt: "consent",
+    select_account: true,
+    scope: 'userinfo.email,calendar' }
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
