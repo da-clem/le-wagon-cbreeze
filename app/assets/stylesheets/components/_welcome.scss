@@ -1,0 +1,14 @@
+.box {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  margin-top: 80px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  box-shadow: 1px 1px 2px $gray-lighter;
+}
+
+.box a {
+  font-size: 22px;
+}
