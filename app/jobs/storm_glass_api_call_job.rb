@@ -78,9 +78,8 @@ class StormGlassApiCallJob < ApplicationJob
             hash_forecast[:weather_code] = "02d"
           rescue NoMethodError => e
               puts forcast
-              print_exception(e, true)
-          rescue => e
-              print_exception(e, false)
+              #print_exception(e, true)
+              next
           end
 
           existing_forcast = Forecast.where("spot_id = ? AND date = ? AND time_slot = ?", current_spot.id, hash_forecast[:date], hash_forecast[:time_slot].to_s)[0]

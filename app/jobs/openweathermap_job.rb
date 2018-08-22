@@ -12,9 +12,8 @@ class OpenweathermapJob < ApplicationJob
     require 'json'
     require 'open-uri'
 
-    ['Ocean Beach (SF)', 'Guincho'].each do |beach_name|
-      puts beach_name
-      current_spot = Spot.where(name: beach_name)[0]
+    Spot.all.each do |spot|
+      current_spot = spot
       lat = current_spot.latitude
       long = current_spot.longitude
       Time.zone = current_spot.timezone
