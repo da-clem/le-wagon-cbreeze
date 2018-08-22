@@ -319,18 +319,6 @@ spots_attributes = [
     longitude:  -156.36141
   },
   {
-    name:       'El Gouna',
-    country:    'Egypt',
-    latitude:   27.42145,
-    longitude:  33.67858
-  },
-  {
-    name:       'El Gouna',
-    country:    'Egypt',
-    latitude:   -12.18762,
-    longitude:  49.35683
-  },
-  {
     name:       'Paje',
     country:    'Zanzibar',
     latitude:   -6.27059,
