@@ -14,9 +14,9 @@ class User < ApplicationRecord
   after_initialize :set_default, if: :new_record?
 
   def set_default
-    self.pref_wave_height_max = 0
+    self.pref_wave_height_max = 1.0
     self.pref_wave_height_min = 0
-    self.pref_wind_speed_max = 0
-    self.pref_wind_speed_min = 0
+    self.pref_wind_speed_max = 15
+    self.pref_wind_speed_min = 5
   end
 end
