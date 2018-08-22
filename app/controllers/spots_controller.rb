@@ -2,8 +2,7 @@ class SpotsController < ApplicationController
   def index
     @spots = policy_scope(Spot)
 
-    @spots = Spot.where.not(latitude: nil, longitude: nil)
-
+    #@spots = Spot.where.not(latitude: nil, longitude: nil)
     @markers = @spots.map do |spot|
       {
         lat: spot.latitude,
