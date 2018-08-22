@@ -3,9 +3,9 @@
       <h5><%= spot.name %></h5>
       <p><%= spot.country %></p>
       <% if current_user.favorite_spots.exists?(spot_id: spot.id) %>
-        <button type="button" class="btn-xs btn-danger"><%= button_to 'Remove', favorite_spot_path(spot), method: :delete %></button>
+        <button class="btn-xs btn-danger"><%= button_to 'Remove', favorite_spot_path(spot), method: :delete %></button>
       <% else %>
-          <button type="button" class="btn-xs btn-primary"><%= button_to 'Add', favorite_spots_path(favorite_spot: {spot_id: spot.id }), method: :post %></button>
+          <button class="btn-xs btn-primary"><%= button_to 'Add', favorite_spots_path(favorite_spot: {spot_id: spot.id }), method: :post %></button>
       <% end %>
     </div>
   </div>
