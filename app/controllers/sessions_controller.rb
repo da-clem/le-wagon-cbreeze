@@ -26,6 +26,7 @@ class SessionsController < ApplicationController
     @session.destroy_all
   end
 
+  private
 
   def make_google_calendar_reservations
     @calendar = GoogleCalendarWrapper.new(current_user)

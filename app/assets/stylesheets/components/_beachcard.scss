@@ -5,7 +5,7 @@
   border-radius: 4px;
   border: 1px solid white;
   box-shadow: 1px 1px 2px $gray-lighter;
-  margin-top: 10px;
+  margin-top: 0px;
   padding: 10px;
   color: $primary-blue;
   position: relative;
@@ -15,7 +15,7 @@
   p {
     margin-bottom: 0;
   }
-  h3 {
+  h4 {
     margin-top: 0;
   }
 }
@@ -23,7 +23,7 @@
 .new-beach-card {
   z-index: 0;
   width: 335px;
-  background: $primary-blue;
+  background: white;
   border-radius: 4px;
   border: 1px solid white;
   box-shadow: 1px 1px 2px $gray-lighter;
@@ -31,9 +31,10 @@
   padding: 10px;
   color: white;
   position: relative;
-  p {
-    margin-bottom: 0;
-  }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 .beach-actions {
