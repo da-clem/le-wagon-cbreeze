@@ -5,9 +5,9 @@ class FavoriteSpotsController < ApplicationController
     authorize @favorite_spot
 
     if @favorite_spot.save
-      redirect_to settings_users_path
+      redirect_back(fallback_location: root_path)
     else
-      render settings_users_path
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -16,7 +16,7 @@ class FavoriteSpotsController < ApplicationController
     authorize @favorite_spot
 
     @favorite_spot.destroy
-    redirect_to settings_users_path
+    redirect_back(fallback_location: root_path)
   end
 
   private
@@ -25,3 +25,5 @@ class FavoriteSpotsController < ApplicationController
     params.require(:favorite_spot).permit(:spot_id)
   end
 end
+
+# redirect_to settings_users_path
