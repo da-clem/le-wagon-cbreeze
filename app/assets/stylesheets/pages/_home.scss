@@ -27,7 +27,15 @@
 
 body.welcome {
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), image-url("banner2.jpg");
+
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+
+
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), image-url("banner1.jpg");
 }
 
