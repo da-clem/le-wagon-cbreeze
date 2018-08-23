@@ -15,6 +15,8 @@
 </div>
 
 <script>
+  let selectedHour = '11';
+
   function showCardsForDay(day=null){
     document.querySelectorAll(".card-wrapper").forEach(function(obj) {
       obj.style.display="none";
@@ -26,13 +28,13 @@
     else
       jsday = new Date(day).toJSON().slice(0,10)
 
-    /*document.querySelectorAll(`[data-day='${jsday}'][data-time='11']`).forEach(function(obj) {
-      obj.style.display="block";
-    });*/
-    showCardsForHour('11');
+    showCardsForHour(selectedHour);
   }
 
   function showCardsForHour(hour){
+    console.log(hour);
+    selectedHour = hour;
+
     day = document.querySelector(".active").getAttribute('data-day');
 
     document.querySelectorAll(".card-wrapper").forEach(function(obj) {

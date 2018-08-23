@@ -63,18 +63,25 @@ class StormGlassApiCallJob < ApplicationJob
         end
         if [11, 15, 19].include? timestamp.hour
           hash_forecast = Hash[hash_forecast.map { |key, value| [API_TRANSLATIONS[key], value/4] }]
-          hash_forecast[:wind_direction] = find_direction(hash_forecast[:wind_direction])
-          hash_forecast[:wave_direction] = find_direction(hash_forecast[:wave_direction])
-          hash_forecast[:temperature] = round_to_integer(hash_forecast[:temperature])
-          puts "bleme" + hash_forecast[:wind_speed].to_s
-          hash_forecast[:wind_speed] = round_to_integer(hash_forecast[:wind_speed]*1.943844)
-          hash_forecast[:wind_gust] = round_to_integer(hash_forecast[:wind_gust]*1.943844)
-          hash_forecast[:wave_heigth] = round_to_one_decimal(hash_forecast[:wave_heigth])
-          hash_forecast[:wave_period] = round_to_integer(hash_forecast[:wave_period])
-          hash_forecast[:spot_id] = current_spot.id
-          hash_forecast[:time_slot] = timestamp.hour
-          hash_forecast[:date] = timestamp.strftime("%Y-%m-%d")
-          hash_forecast[:weather_code] = "02d"
+
+          begin
+            hash_forecast[:wind_direction] = find_direction(hash_forecast[:wind_direction])
+            hash_forecast[:wave_direction] = find_direction(hash_forecast[:wave_direction])
+            hash_forecast[:temperature] = round_to_integer(hash_forecast[:temperature])
+            hash_forecast[:wind_speed] = round_to_integer(hash_forecast[:wind_speed]*1.943844)
+            hash_forecast[:wind_gust] = round_to_integer(hash_forecast[:wind_gust]*1.943844)
+            hash_forecast[:wave_heigth] = round_to_one_decimal(hash_forecast[:wave_heigth])
+            hash_forecast[:wave_period] = round_to_integer(hash_forecast[:wave_period])
+            hash_forecast[:spot_id] = current_spot.id
+            hash_forecast[:time_slot] = timestamp.hour
+            hash_forecast[:date] = timestamp.strftime("%Y-%m-%d")
+            hash_forecast[:weather_code] = "02d"
+          rescue NoMethodError => e
+              puts forcast
+              hash_forecast = Hash.new(0)
+              #print_exception(e, true)
+              next
+          end
 
           existing_forcast = Forecast.where("spot_id = ? AND date = ? AND time_slot = ?", current_spot.id, hash_forecast[:date], hash_forecast[:time_slot].to_s)[0]
 

@@ -14,8 +14,9 @@ class SpotsController < ApplicationController
     end
   end
 
-  def maps_icon_helper(current_user, spot)
+  private
 
+  def maps_icon_helper(current_user, spot)
     if current_user.favorite_spots.exists?(spot_id: spot.id)
       return "http://res.cloudinary.com/cbreeze/image/upload/c_scale,w_25/v1534932112/location-pin_1.png"
     else

@@ -1,15 +1,14 @@
 <% @sessions.group_by { |session| session.forecast.date }.each do |day, session| %>
-
+  <div class="container">
     <h5 class="session-separator text-center"><%= get_day_and_date(day) %>
     </h5>
-
-
-  <% session.each do |sesh| %>
-    <p class="timeslot-title text-center"><%= get_timeslot(sesh) %></p>
-    <div class="session-margin">
-      <%= render 'shared/card', forecast: sesh.forecast%>
-    </div>
-  <% end %>
+    <% session.each do |sesh| %>
+      <p class="timeslot-title text-center"><%= get_timeslot(sesh) %></p>
+      <div class="session-margin">
+        <%= render 'shared/card', forecast: sesh.forecast%>
+      </div>
+    <% end %>
+  </div>
 <% end %>
 
 
