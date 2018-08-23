@@ -78,6 +78,7 @@ class StormGlassApiCallJob < ApplicationJob
             hash_forecast[:weather_code] = "02d"
           rescue NoMethodError => e
               puts forcast
+              hash_forecast = Hash.new(0)
               #print_exception(e, true)
               next
           end
