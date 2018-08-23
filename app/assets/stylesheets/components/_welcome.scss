@@ -4,7 +4,7 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 4px;
-  margin-top: 80px;
+  margin-top: 20px;
   padding-top: 10px;
   padding-bottom: 20px;
   box-shadow: 1px 1px 2px $gray-lighter;
@@ -15,4 +15,11 @@
 .box a {
   text-decoration: underline;
   font-size: 22px;
+}
+
+.match {
+  border-style: 1px solid black;
+  width: 15px;
+  height: 10px;
+  background-color: black;
 }

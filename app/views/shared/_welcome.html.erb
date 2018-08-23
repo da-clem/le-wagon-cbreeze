@@ -2,9 +2,17 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="box">
-        <h1>Welcome !</h1>
-        <p>Start adding your favorite spots and set your preferences !</p>
+        <h3>Welcome !</h3>
+        <p> -> Start define your kitesurfer profile <- </p>
+        <p> - Add your favorites spots - </p>
+        <p> - Set your forecast preferences</p>
         <%= link_to "Settings", settings_users_path(current_user) %>
+
+        <p>In the dashboard, if your forecast preferences :</p>
+        <p>match the forecast: the card will turn</p>
+        <div class= 'match'></div>
+        <p>don't match the forecast: the card will turn</p>
+        <div class= 'nomatch'></div>
       </div>
     </div>
   </div>
