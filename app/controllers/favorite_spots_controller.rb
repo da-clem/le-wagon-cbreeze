@@ -25,5 +25,3 @@ class FavoriteSpotsController < ApplicationController
     params.require(:favorite_spot).permit(:spot_id)
   end
 end
-
-# redirect_to settings_users_path
