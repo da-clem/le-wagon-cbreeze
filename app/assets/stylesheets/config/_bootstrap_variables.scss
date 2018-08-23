@@ -15,7 +15,7 @@ $gray-base:       $gray;
 $brand-primary:   $primary-blue;
 $brand-success:   $danger-blue;
 $brand-info:      $yellow;
-$brand-danger:    $gray-dark;
+$brand-danger:    $action-color;
 $brand-warning:   $gray;
 
 // Buttons & inputs' radius
@@ -275,7 +275,7 @@ $border-radius-small: 2px;
 // $input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
 
 // //** `.form-group` margin
-// $form-group-margin-bottom:       15px !default;
+$form-group-margin-bottom:       0px !default;
 
 // $legend-color:                   $gray-dark !default;
 // $legend-border-color:            #e5e5e5 !default;
