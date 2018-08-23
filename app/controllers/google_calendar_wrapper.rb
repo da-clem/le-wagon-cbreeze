@@ -10,8 +10,6 @@ class GoogleCalendarWrapper
   end
 
   def insert_in_calendar(session)
-
-
     curr = @cal.list_calendar_lists.items.select do |cal|
       cal.summary == "cBreeze"
     end

@@ -3,16 +3,12 @@ class UsersController < ApplicationController
   def settings
     authorize current_user
     @favorite_spot = FavoriteSpot.new
-
-
   end
 
   def change
     respond_to do |format|
         format.js  {
           authorize current_user
-          puts "heeeeeeeyp"
-          puts params
           if current_user.update(user_params)
             puts "updated"
           else
