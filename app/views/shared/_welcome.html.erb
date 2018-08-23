@@ -1,18 +1,21 @@
 <div class="text-center">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="box">
-        <h3>Welcome !</h3>
-        <p> -> Start define your kitesurfer profile <- </p>
-        <p> - Add your favorites spots - </p>
-        <p> - Set your forecast preferences</p>
-        <%= link_to "Settings", settings_users_path(current_user) %>
-
-        <p>In the dashboard, if your forecast preferences :</p>
-        <p>match the forecast: the card will turn</p>
-        <div class= 'match'></div>
-        <p>don't match the forecast: the card will turn</p>
-        <div class= 'nomatch'></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <h3>One more step !</h3>
+          <h5><i class="far fa-hand-point-right"></i> Start define your kitesurfer profile <i class="far fa-hand-point-left"></i></h5>
+          <p>Add your favorites spots</p>
+          <p>Set your forecast preferences</p>
+          <br>
+          <p><span class='dash'>In the dashboard, <br> if your forecast preferences :</span></p>
+          <br>
+          <p><i class="far fa-thumbs-up"></i> match the forecast, the card will turn:</p>
+          <div class= 'match'></div>
+          <p><i class="far fa-thumbs-down"></i> don't match the forecast, the card will turn:</p>
+          <div class= 'nomatch'></div>
+<!--           <button type="button"><%= link_to "Settings", settings_users_path(current_user) %></button>
+ -->        </div>
       </div>
     </div>
   </div>
