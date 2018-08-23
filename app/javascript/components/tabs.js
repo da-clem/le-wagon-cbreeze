@@ -12,7 +12,7 @@ function addTabListener(){
   document.querySelector(".tab.active").classList.toggle("active");
   this.classList.toggle("active");
   document.querySelector(".timeslottab.active").classList.toggle("active");
-  document.querySelector("[data-hour='11']").classList.toggle("active");
+  document.querySelector(`[data-hour='${selectedHour}']`).classList.toggle("active");
   showCardsForDay(this.getAttribute('data-day'));
 }
 
