@@ -1,21 +1,16 @@
-<div class="text-center">
+<div class="text-center welcome-space">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        <div class="box">
-          <h3>One more step !</h3>
-          <h5><i class="far fa-hand-point-right"></i> Define your kitesurfer profile <i class="far fa-hand-point-left"></i></h5>
-          <p>Add your favorite spots</p>
-          <p>Set your forecast preferences</p>
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <%= image_tag "beachwind.png", height: 100 %>
+          <h3>Nothing here yet!</h3>
+          <ul class="welcome-items">
+            <li>Choose your favorite spots</li>
+            <li>Tell us what conditions you like</li>
+            <li>Here in the dashboard we will <span style="background-color: #06BEB6; color: white; padding: 2px;">highlight</span> the recommended sessions.</li>
+          </ul>
           <br>
-          <p><span class='dash'>In the dashboard, <br> if your forecast preferences :</span></p>
-          <br>
-          <p><i class="far fa-thumbs-up"></i> match the forecast, the card will turn:</p>
-          <div class= 'match'></div>
-          <p><i class="far fa-thumbs-down"></i> don't match the forecast, the card will turn:</p>
-          <div class= 'nomatch'></div>
           <%= link_to "Settings", settings_users_path, class: "btn btn-primary", style: "background-color: #05668D;" %>
-        </div>
       </div>
     </div>
   </div>
