@@ -392,6 +392,12 @@ spots_attributes = [
     longitude:  -109.98915,
     timezone:   'America/Mazatlan'
   },
+  {
+    name:       'Obidos',
+    country:    'Portugal',
+    latitude:   39.43128,
+    longitude:  -9.23709
+  },
 ]
 Spot.create!(spots_attributes)
 puts 'Finished!'

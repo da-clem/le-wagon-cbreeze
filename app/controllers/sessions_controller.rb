@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def index
     policy_scope(Session)
-    @sessions = Session.where(user: current_user).joins(:forecast).where('forecasts.date >= ?', Date.today.to_s)
+    @sessions = Session.where(user: current_user).joins(:forecast).where('forecasts.date >= ?', Date.today.to_s).includes(:forecast).order('forecasts.date asc, forecasts.time_slot asc')
   end
 
   def create

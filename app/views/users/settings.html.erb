@@ -40,19 +40,20 @@
   </div>
 </div>
 
-<div class="page-separator spots-separator">
- <h5 class="text-center">Add New Spots</h5>
+
+<div class="page-separator spots-separator margin-bot">
+ <h5 class="text-center">Manage Spots</h5>
 </div>
 
-<div class="container">
+<div class="container margin-bot">
  <div class='row'>
 
-  <div class='col-xs-12 col-lg-6 container container-center-elements'>
+  <div class='col-xs-6  container container-center-elements'>
     <div class="new-beach-card">
       <div class="form">
         <%= simple_form_for [@favorite_spot], :html => {:class => 'form-new-beach'} do |f| %>
           <%= f.association :spot, collection: Spot.order('name ASC'),
-                            prompt: "Select From List",
+                            prompt: "Add from list",
                             label: false
           %>
           <% end %>
@@ -60,17 +61,15 @@
     </div>
   </div>
 
-   <div class='col-xs-12 col-lg-6 container container-center-elements'>
+
+
+   <div class='col-xs-6 container container-center-elements'>
     <div class="new-beach-card">
-       <%= link_to "Choose in Map", spots_path, class: "btn btn-danger" %>
+       <%= link_to "Add from map", spots_path, class: "btn btn-danger" %>
     </div>
    </div>
 
   </div>
-</div>
-
-<div class="page-separator spots-separator margin-bot">
- <h5 class="text-center">Favorite Spots</h5>
 </div>
 
 <div class="container">
