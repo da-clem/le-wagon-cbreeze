@@ -4,7 +4,7 @@
     </h5>
     <% session.each do |sesh| %>
       <p class="timeslot-title text-center"><%= get_timeslot(sesh) %></p>
-      <div class="session-margin">
+      <div class="session-margin text-center">
         <%= render 'shared/card', forecast: sesh.forecast%>
       </div>
     <% end %>

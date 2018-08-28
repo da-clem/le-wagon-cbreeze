@@ -1,54 +1,50 @@
 <div class='card-wrapper' data-day='<%=forecast.date%>' data-time='<%=forecast.time_slot%>'>
-  <div class='row'>
-    <div class='col-xs-12 col-sm-4'>
-      <div class='card-container'>
-        <div class='card <%= check_if_preferences_match(forecast)%>'>
-          <div class='head-weather-container'>
-            <%= cl_image_tag "#{forecast.weather_code}", width: 20, height: 20 %>
-            <div class='weather-temp'>
-            <p><%= forecast.temperature %> ºC</p>
+  <div class='card-container'>
+    <div class='card <%= check_if_preferences_match(forecast)%>'>
+      <div class='head-weather-container'>
+        <%= cl_image_tag "#{forecast.weather_code}", width: 20, height: 20 %>
+        <div class='weather-temp'>
+        <p><%= forecast.temperature %> ºC</p>
+        </div>
+      </div>
+      <div class='card-head-container'>
+        <div class='beach-name'>
+          <p><%= forecast.spot.name %></p>
+        </div>
+        <div class='session-icon'>
+          <%= render 'shared/switch', sessions: @sessions, forecast: forecast %>
+        </div>
+      </div>
+      <div class='card-body-container'>
+        <div class='card-wind-container'>
+          <div class='wind-icon'>
+            <%= cl_image_tag "wind" %>
+          </div>
+          <div class='wind-speed'>
+            <p><%= forecast.wind_speed %><span class='metric'> kts</span></p>
+          </div>
+          <div class="secondary-info-wind">
+            <div class='wind-direction-icon'>
+            <%= cl_image_tag "#{forecast.wind_direction}" %>
+            </div>
+            <div class='wind-gusts'>
+              <p><%= forecast.wind_gust %> kts</p>
             </div>
           </div>
-          <div class='card-head-container'>
-            <div class='beach-name'>
-              <p><%= forecast.spot.name %></p>
-            </div>
-            <div class='session-icon'>
-              <%= render 'shared/switch', sessions: @sessions, forecast: forecast %>
-            </div>
+        </div>
+        <div class='card-wave-container'>
+          <div class='wave-icon'>
+            <%= cl_image_tag "wave" %>
           </div>
-          <div class='card-body-container'>
-            <div class='card-wind-container'>
-              <div class='wind-icon'>
-                <%= cl_image_tag "wind" %>
-              </div>
-              <div class='wind-speed'>
-                <p><%= forecast.wind_speed %><span class='metric'> kts</span></p>
-              </div>
-              <div class="secondary-info-wind">
-                <div class='wind-direction-icon'>
-                <%= cl_image_tag "#{forecast.wind_direction}" %>
-                </div>
-                <div class='wind-gusts'>
-                  <p><%= forecast.wind_gust %> kts</p>
-                </div>
-              </div>
+          <div class='wave-heigth'>
+            <p><%= forecast.wave_heigth %><span class='metric'> m</span></p>
+          </div>
+          <div class="secondary-info-wave">
+            <div class='wave-direction-icon'>
+            <%= cl_image_tag "#{forecast.wave_direction}" %>
             </div>
-            <div class='card-wave-container'>
-              <div class='wave-icon'>
-                <%= cl_image_tag "wave" %>
-              </div>
-              <div class='wave-heigth'>
-                <p><%= forecast.wave_heigth %><span class='metric'> m</span></p>
-              </div>
-              <div class="secondary-info-wave">
-                <div class='wave-direction-icon'>
-                <%= cl_image_tag "#{forecast.wave_direction}" %>
-                </div>
-                <div class='wave-period'>
-                  <p><%= forecast.wave_period %> sec</p>
-                </div>
-              </div>
+            <div class='wave-period'>
+              <p><%= forecast.wave_period %> sec</p>
             </div>
           </div>
         </div>
